@@ -1,11 +1,14 @@
+/* ----------------- GOOGL FONTS ---------------- */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 
 :root {
+  /* fonts size */
   --small-font-size: 12px;
   --regular-font-size: 14px;
   --big-font-size: 16px;
 
+  /* fonts family */
   --primary-font-family: Montserrat;
   --secondary-font-family: "Playfair Display";
 }
@@ -111,15 +114,6 @@ body {
   margin-right: 15px;
 }
 
-/* source */
-.source,
-.source a {
-  margin-top: 56px;
-  font-size: 16px;
-  text-decoration: none;
-  color: #bdbdbd;
-}
-
 .card {
   padding: 57px 51px 10px 43px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
@@ -149,18 +143,104 @@ body {
 }
 
 .card-item .item-info-2 {
-  font-size: 14px;
+  font-size: var(--regular-font-size);
 }
 
 .material-icons {
   margin-right: 14px;
 }
 
+/* SOURCE */
+.source,
+.source a {
+  margin-top: 56px;
+  font-size: var(--big-font-size);
+  text-decoration: none;
+  color: #bdbdbd;
+}
+
 /* FOOTER */
 footer p {
   text-align: center;
   font-family: Montserrat;
-  font-size: 14px;
+  font-size: var(--regular-font-size);
   margin: 93px 0 24px 0;
   color: #a9a9a9;
+}
+
+/* MEDIUM SCREEN SIZE */
+@media screen and (max-width: 1004px) {
+  body {
+    background-color: #fafafa;
+  }
+
+  .card {
+    display: flex;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+
+  .card-item {
+    margin: 0 40px 20px 0;
+  }
+
+  .card-item span {
+    font-size: 1.5em;
+  }
+
+  .card-item .item-info-1 {
+    font-size: 8px;
+  }
+
+  .card-item .item-info-2 {
+    font-size: 10px;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .recipe-container {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+
+  .ingredients,
+  .instruction p {
+    width: 95%;
+  }
+}
+
+/* MOBILE SCREEN SIZE */
+@media screen and (max-width: 635px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .recipe-description i {
+    font-size: var(--small-font-size);
+  }
+
+  .recipe-container .section-title {
+    font-size: 18px;
+  }
+
+  .recipe-container .section-subtitle {
+    font-size: var(--big-font-size);
+  }
+  .ingredients .ingredient-item label {
+    font-size: 14px;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "header header header";
+  }
+
+  .card-item:nth-child(1) {
+    grid-area: header;
+  }
 }
